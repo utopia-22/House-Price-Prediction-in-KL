@@ -49,7 +49,9 @@ rooms = st.number_input("Rooms", min_value=1, value=3)
 bathrooms = st.number_input("Bathrooms", min_value=1, value=2)
 car_parks = st.number_input("Car Parks", min_value=0, value=1)
 selected_property_type = st.selectbox("Property Type", sorted(property_type_mapping.keys()) )
-size = st.number_input("Size (sq. ft.)", min_value=100, value=1200)
+size = st.slider("Size (sq. ft.)", min_value=400, max_value=5000, value=(1000, 3000))
+st.write(f"Selected size range: {size[0]} - {size[1]} sq. ft.")
+
 
 # Furnishing options (One-Hot Encoding)
 furnishing_options = ["Fully Furnished", "Partly Furnished", "Unfurnished"]
