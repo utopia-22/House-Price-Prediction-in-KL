@@ -52,10 +52,10 @@ selected_property_type = st.selectbox("Property Type", sorted(property_type_mapp
 # Define logical size options
 logical_sizes = [400, 800, 1000, 1200, 1500, 2000, 2500, 3000, 3500, 4000, 5000]
 
-# Slider with step control
-size = st.slider("Size (sq. ft.)", min_value=min(logical_sizes), max_value=max(logical_sizes), value=(1000, 3000), step=100)
+# Select slider with predefined values
+size = st.select_slider("Size (sq. ft.)", options=logical_sizes, value=1000)
 
-st.write(f"Selected size range: {size[0]} - {size[1]} sq. ft.")
+st.write(f"Selected size: {size} sq. ft.")
 
 
 # Furnishing options (One-Hot Encoding)
