@@ -49,7 +49,12 @@ rooms = st.number_input("Rooms", min_value=1, value=3)
 bathrooms = st.number_input("Bathrooms", min_value=1, value=2)
 car_parks = st.number_input("Car Parks", min_value=0, value=1)
 selected_property_type = st.selectbox("Property Type", sorted(property_type_mapping.keys()) )
-size = st.slider("Size (sq. ft.)", min_value=400, max_value=5000, value=(1000, 3000))
+# Define logical size options
+logical_sizes = [400, 800, 1000, 1200, 1500, 2000, 2500, 3000, 3500, 4000, 5000]
+
+# Slider with step control
+size = st.slider("Size (sq. ft.)", min_value=min(logical_sizes), max_value=max(logical_sizes), value=(1000, 3000), step=100)
+
 st.write(f"Selected size range: {size[0]} - {size[1]} sq. ft.")
 
 
